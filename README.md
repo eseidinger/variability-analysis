@@ -4,7 +4,7 @@ A domain-independent project for modeling configuration spaces, evaluating const
 
 ## Status
 
-The project is in prototype planning. No application implementation or successful deployment is currently evidenced.
+The initial UI/API integration prototype and combined container image have been validated locally. Deployment through the Developer Platform remains to be verified.
 
 Development starts with a small runnable application on the Developer Platform. Reusable framework components for Java, Python, TypeScript, Angular, and React follow after the prototype establishes stable semantics and contracts.
 

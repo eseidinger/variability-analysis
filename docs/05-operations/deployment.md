@@ -1,8 +1,19 @@
 # Prototype Deployment
 
-Status: planned procedure and acceptance scope; no successful deployment is currently evidenced.
+Status: local container build implemented; platform deployment remains to be verified.
 
 The prototype will be deployed through the existing Developer Platform as one container image containing the UI and API. PostgreSQL is provided separately by the platform.
+
+## Local image
+
+Build and run the combined image from the repository root:
+
+```shell
+docker build --file apps/prototype/deployment/Dockerfile --tag variability-analysis .
+docker run --rm --publish 8080:8080 variability-analysis
+```
+
+Quarkus serves the compiled Angular UI at <http://localhost:8080> and the API below `/api`. The image runs as a non-root user.
 
 ## Application contract
 

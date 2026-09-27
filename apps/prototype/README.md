@@ -20,4 +20,4 @@ The prototype is split into independent API and UI projects. Each project owns i
 - Shared generated artifacts must come from a documented contract; source code is not copied between projects.
 - The deployment layer may serve the built UI and API from one container image without merging their project structures.
 
-Technology-specific manifests will be added after the initial language and UI decisions are accepted.
+The initial implementation uses a Quarkus API, an Angular UI, and a multi-stage Docker build that packages both in one runtime image.
