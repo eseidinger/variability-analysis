@@ -17,7 +17,15 @@ The prototype application is the first integrated deliverable. Framework compone
 ## Proposed repository evolution
 
 ```text
-apps/prototype/          Initial API and UI
+apps/prototype/
+  api/                   Independent backend project
+    src/                 API and domain source
+    tests/               Unit, contract, and persistence tests
+  ui/                    Independent frontend project
+    src/                 UI source and assets
+    tests/               Component, interaction, and accessibility tests
+  integration-tests/     Black-box UI/API/PostgreSQL checks
+  deployment/            Single-image deployment assembly
 docs/                    Product, architecture, decisions, development, operations
 examples/                Synthetic models and later domain fixtures
 spec/                    Stable interchange and result contracts

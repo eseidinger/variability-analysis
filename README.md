@@ -18,6 +18,8 @@ The first application will:
 - present results in a verifiable form; and
 - deploy its UI and API as one container image.
 
+The stack-neutral workspace is documented in [`apps/prototype/`](apps/prototype/README.md).
+
 Interactive analysis views, additional language implementations, reusable UI components, external datasets, and performance or storage experiments follow in later stages.
 
 ## Documentation
