@@ -17,7 +17,7 @@ COPY apps/prototype/api/pom.xml ./
 RUN mvn --batch-mode --no-transfer-progress dependency:go-offline
 
 COPY apps/prototype/api/src/ src/
-COPY --from=ui-build /workspace/ui/dist/variability-analysis-ui/browser/ src/main/resources/META-INF/resources/
+COPY --from=ui-build /workspace/ui/dist/variability-engineering-ui/browser/ src/main/resources/META-INF/resources/
 
 RUN mvn --batch-mode --no-transfer-progress package -DskipTests
 
@@ -38,4 +38,3 @@ EXPOSE 8080
 USER 185
 
 ENTRYPOINT ["/opt/jboss/container/java/run/run-java.sh"]
-

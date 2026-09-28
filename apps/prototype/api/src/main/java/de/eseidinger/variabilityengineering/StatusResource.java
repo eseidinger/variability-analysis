@@ -1,4 +1,4 @@
-package de.eseidinger.variabilityanalysis;
+package de.eseidinger.variabilityengineering;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -11,6 +11,6 @@ public class StatusResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String status() {
-        return "Variability Analysis API is reachable";
+        return "Variability Engineering API is reachable";
     }
 }

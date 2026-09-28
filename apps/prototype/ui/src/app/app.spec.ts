@@ -20,13 +20,13 @@ describe('App', () => {
     const request = TestBed.inject(HttpTestingController).expectOne('/api/status');
 
     expect(request.request.method).toBe('GET');
-    request.flush('Variability Analysis API is reachable');
+    request.flush('Variability Engineering API is reachable');
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Variability Analysis');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Variability Engineering Framework');
     expect(compiled.querySelector('[role="status"]')?.textContent).toContain(
-      'Variability Analysis API is reachable',
+      'Variability Engineering API is reachable',
     );
   });
 

@@ -1,4 +1,4 @@
-package de.eseidinger.variabilityanalysis;
+package de.eseidinger.variabilityengineering;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -16,6 +16,6 @@ class StatusResourceTest {
           .then()
              .statusCode(200)
              .contentType("text/plain")
-             .body(is("Variability Analysis API is reachable"));
+             .body(is("Variability Engineering API is reachable"));
     }
 }

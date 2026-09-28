@@ -5,8 +5,8 @@ This directory assembles the independently built UI and API into one container i
 Build from the repository root so the Docker build can access both projects:
 
 ```shell
-docker build --file apps/prototype/deployment/Dockerfile --tag variability-analysis .
-docker run --rm --publish 8080:8080 variability-analysis
+docker build --file apps/prototype/deployment/Dockerfile --tag variability-engineering-framework .
+docker run --rm --publish 8080:8080 variability-engineering-framework
 ```
 
 Open <http://localhost:8080>. The UI calls `/api/status` on the same origin; the Angular development proxy is not involved in the container.

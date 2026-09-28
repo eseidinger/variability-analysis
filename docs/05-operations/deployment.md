@@ -9,8 +9,8 @@ The prototype will be deployed through the existing Developer Platform as one co
 Build and run the combined image from the repository root:
 
 ```shell
-docker build --file apps/prototype/deployment/Dockerfile --tag variability-analysis .
-docker run --rm --publish 8080:8080 variability-analysis
+docker build --file apps/prototype/deployment/Dockerfile --tag variability-engineering-framework .
+docker run --rm --publish 8080:8080 variability-engineering-framework
 ```
 
 Quarkus serves the compiled Angular UI at <http://localhost:8080> and the API below `/api`. The image runs as a non-root user.

@@ -1,4 +1,4 @@
-package de.eseidinger.variabilityanalysis;
+package de.eseidinger.variabilityengineering;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
