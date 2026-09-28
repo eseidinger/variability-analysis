@@ -4,15 +4,15 @@ Status: **Proposed**.
 
 ## Context
 
-Rules must have identical meaning in multiple implementation languages.
+Boolean model constraints and presence conditions must have identical meaning in multiple implementation languages.
 
 ## Decision
 
-Use a dedicated serializable expression structure instead of native language expressions.
+Use a dedicated serializable expression structure instead of native language expressions for model constraints and presence conditions. Numeric portfolio constraints and optimization objectives require a separate contract.
 
 ## Consequences
 
-Parsing, type checking, validation, and evaluation follow a shared specification. The concrete schema and textual syntax remain open.
+Parsing, type checking, validation, and evaluation follow a shared specification. The concrete schema and textual syntax remain open. This AST must not expand implicitly into an untyped language for portfolio optimization.
 
 ## Validation
 

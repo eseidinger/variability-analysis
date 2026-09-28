@@ -1,8 +1,8 @@
 # Sources and Traceability
 
-Status: source baseline for planning; links do not constitute implementation or deployment evidence.
+Status: source baseline for planning; links and discussion summaries do not constitute implementation or deployment evidence.
 
-All listed pages were reviewed on September 27, 2026. The available website material consists of project and lab pages rather than completed technical articles or benchmark reports.
+The listed website pages were reviewed on September 27, 2026. The framework update was incorporated on September 28, 2026. Website material consists of project and lab pages rather than completed technical articles or benchmark reports.
 
 | Source | Contribution |
 |---|---|
@@ -13,6 +13,7 @@ All listed pages were reviewed on September 27, 2026. The available website mate
 | [Writing](https://www.eseidinger.de/writing/) | Articles in preparation; no published prototype results at review time. |
 | [Projects](https://www.eseidinger.de/projects/) | Relationship between platform, application, and lab. |
 | [Lab](https://www.eseidinger.de/lab/) | Shared experimental method and investigation status. |
+| [Framework update](../update.md) | Broader variability-engineering vision, food-service demonstration, impact analysis, configuration assistance, and optimization goals. |
 
 ## Maintenance
 

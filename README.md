@@ -1,12 +1,12 @@
-# Variability Analysis Project
+# Variability Engineering Framework
 
-A domain-independent project for modeling configuration spaces, evaluating constraints and presence conditions, calculating distinct variants, and exploring the results.
+A domain-independent framework for modeling, analyzing, configuring, and optimizing systems with many possible variants. Variability analysis is the first planned framework capability and remains the semantic foundation for the broader framework.
 
 ## Status
 
 The initial UI/API integration prototype and combined container image have been validated locally. Deployment through the Developer Platform remains to be verified.
 
-Development starts with a small runnable application on the Developer Platform. Reusable framework components for Java, Python, TypeScript, Angular, and React follow after the prototype establishes stable semantics and contracts.
+Development starts with a small runnable analysis application on the Developer Platform. Food service is the first planned real-world demonstration. Impact analysis, configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
 
 ## Initial prototype
 
@@ -20,7 +20,7 @@ The first application will:
 
 The stack-neutral workspace is documented in [`apps/prototype/`](apps/prototype/README.md).
 
-Interactive analysis views, additional language implementations, reusable UI components, external datasets, and performance or storage experiments follow in later stages.
+Interactive analysis views, a food-service data adapter, impact analysis, configuration assistance, portfolio optimization, additional language implementations, reusable UI components, and performance or storage experiments follow in later stages.
 
 ## Documentation
 
@@ -37,4 +37,4 @@ See the [documentation index](docs/README.md) for status conventions and mainten
 
 ## Core distinction
 
-A **configuration** is an assignment of feature values. A **variant** is the resulting set of present elements. Different configurations can produce the same variant, so configuration count and variant count are separate metrics.
+A **configuration** is a complete assignment of feature values. A structural **variant** is the resulting collection of present element usages. A **variant record** is an identified generated or imported candidate with dimensions and provenance. Different configurations or records can produce the same structural variant, so configuration count, record count, and distinct-variant count are separate metrics. A **portfolio** is a selected collection of variant records; in the food-service domain, a dish is a variant record and a menu is a portfolio.

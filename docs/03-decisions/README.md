@@ -13,6 +13,9 @@ ADRs separate accepted requirements and documented directions from proposals. Im
 | [007](ADR-007-portable-expression-ast.md) | Portable expression AST | Proposed |
 | [008](ADR-008-conformance-across-languages.md) | Shared specification and conformance cases | Language support required; design proposed |
 | [009](ADR-009-workload-driven-data-stores.md) | Evaluate additional data stores against workloads | Documented direction |
+| [010](ADR-010-normalized-analysis-population.md) | Normalize generated and observed variant records | Documented direction |
+| [011](ADR-011-analysis-dimensions.md) | Separate analysis dimensions from configuration features | Documented direction |
+| [012](ADR-012-portfolio-optimization-boundary.md) | Separate portfolio optimization from configuration validity | Documented direction |
 
 ## Decision process
 

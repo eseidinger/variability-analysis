@@ -8,11 +8,11 @@ Evaluation must be independently testable and reusable in different interfaces.
 
 ## Decision
 
-Define explicit boundaries between the domain model, expression evaluation, analysis, derived views, application coordination, persistence, and visualization.
+Define explicit boundaries between the domain model, domain adapters, normalization, expression evaluation, analysis, impact comparison, configuration assistance, portfolio optimization, derived views, application coordination, persistence, and visualization.
 
 ## Consequences
 
-UI code cannot redefine counting or rule semantics. Persistence and transport remain replaceable.
+UI code cannot redefine counting, feasibility, or optimization semantics. Model constraints remain separate from portfolio constraints and objectives. Persistence, solver implementations, and transport remain replaceable.
 
 ## Validation
 

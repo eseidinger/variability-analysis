@@ -7,11 +7,19 @@ Status: proposed verification approach.
 | Enumeration and constraints | Exactly the valid configurations are analyzed. |
 | Presence conditions | Each reference configuration produces its expected element set. |
 | Deduplication | Equal element sets count as one variant. |
+| Record identity | Separate generated or imported records remain countable when they share one structural variant. |
 | Invalid versus empty | Invalid configurations remain distinct from valid empty variants. |
 | Persistence | Saving and loading preserves semantics. |
-| Dimension order | Reordering does not change overall results. |
-| Projection | Hiding alone does not remove configurations. |
+| Dimension origin | Feature-derived, imported, and derived dimensions retain documented types, values, and provenance. |
+| Dimension order | Reordering does not change population membership or overall results. |
+| Projection | Hiding alone does not remove records. |
 | Aggregation | Distinct variants use set operations rather than additive counts. |
+| Imported population | License, source version, mapping version, rejected rows, missing values, and derivations are recorded. |
+| Impact scenario | The baseline, operation, feasibility rule, and absolute and relative deltas are reproducible. |
+| Partial requirements | Every completion is valid and compatible; exhaustive fixtures contain no omitted compatible completion. |
+| Portfolio feasibility | Every selected record belongs to the candidate population and every portfolio constraint is evaluated. |
+| Optimization | Small fixtures match exhaustive feasible sets and objective values; solver status supports every optimality claim. |
+| Pareto frontier | Every reported point is feasible and non-dominated, and exhaustive fixtures contain no omitted non-dominated point. |
 | Language conformance | Shared inputs produce equivalent normalized results. |
 
-Experiments must state the question, hypothesis, versions, hardware, configuration, input generator, revision, repeated measurements, raw results, and limitations. Record runtime, peak memory, relevant latency distributions, storage and index costs, and operational effort where applicable. A successful deployment is not a benchmark result.
+Experiments must state the question, hypothesis, versions, hardware, configuration, input generator or dataset version, mapping and derivations, revision, repeated measurements, raw results, and limitations. Optimization experiments also record solver, parameters, seed where applicable, termination status, bounds, and elapsed time. Record runtime, peak memory, relevant latency distributions, storage and index costs, and operational effort where applicable. A successful deployment is not a benchmark result.

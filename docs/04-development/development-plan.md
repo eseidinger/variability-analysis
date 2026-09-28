@@ -8,11 +8,15 @@ flowchart LR
     Core --> App[Prototype application]
     App --> Deploy[First deployment]
     Deploy --> Interactive[Interactive analysis]
-    Interactive --> Framework[Framework components]
-    Framework --> Experiments[Datasets and experiments]
+    Interactive --> Normalize[Normalized populations]
+    Normalize --> Food[Food-service demonstration]
+    Food --> Impact[Impact and configuration]
+    Impact --> Optimize[Portfolio optimization]
+    Optimize --> Framework[Framework components]
+    Framework --> Experiments[Additional domains and experiments]
 ```
 
-The prototype application is the first integrated deliverable. Framework components are created later from stable, verified contracts rather than treated as prerequisites.
+The prototype application is the first integrated deliverable. The synthetic fixture establishes the generative semantics; the food-service demonstration then validates observed records, imported and derived dimensions, provenance, and portfolio needs. Framework components are created later from stable, verified contracts rather than treated as prerequisites.
 
 ## Proposed repository evolution
 
@@ -28,6 +32,7 @@ apps/prototype/
   deployment/            Single-image deployment assembly
 docs/                    Product, architecture, decisions, development, operations
 examples/                Synthetic models and later domain fixtures
+adapters/                Later domain-specific dataset mappings
 spec/                    Stable interchange and result contracts
 compliance-tests/        Shared reference inputs and expected outputs
 java/                    Later Java components
@@ -38,4 +43,4 @@ ui/react/                Later React visualization components
 experiments/             Reproducible algorithm and storage studies
 ```
 
-Create only the directories required by current work. Add implementation evidence and observed limitations as each milestone is completed.
+Create only the directories required by current work. A future solver dependency belongs behind an optimization interface and is added only after an exhaustive fixture defines its semantics. Add implementation evidence and observed limitations as each milestone is completed.

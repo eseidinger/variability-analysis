@@ -2,7 +2,9 @@
 
 Status: documented prototype direction; schema and operational acceptance remain open.
 
-The first prototype saves and loads configuration models through the Developer Platform PostgreSQL service. Relational tables, JSONB, or a combination must be selected from actual access patterns rather than assumed in advance.
+The first prototype saves and loads generative configuration models through the Developer Platform PostgreSQL service. Relational tables, JSONB, or a combination must be selected from actual access patterns rather than assumed in advance.
+
+Later persistence may include source descriptors, adapter and mapping versions, imported populations, scenario definitions, portfolios, and optimization results. Those records require explicit links to the exact model, dataset, mapping, and algorithm versions that produced them; they are not part of the initial schema by default.
 
 The UI and API are packaged in one container image. The Developer Platform supplies database credentials, HTTP routing, and workload operation. Domain objects do not contain infrastructure configuration.
 
@@ -14,4 +16,4 @@ The UI and API are packaged in one container image. The Developer Platform suppl
 - Persistence verified after workload recreation.
 - Runtime and peak memory recorded for representative fixtures.
 
-Model IDs, versioning, concurrent changes, stored analysis results, schema migration, backup, and recovery procedures remain open. Additional data stores require a defined workload and reproducible comparison.
+Model and dataset IDs, versioning, provenance, concurrent changes, stored analysis or optimization results, schema migration, backup, and recovery procedures remain open. Additional data stores require a defined workload and reproducible comparison.

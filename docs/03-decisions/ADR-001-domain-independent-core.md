@@ -8,7 +8,7 @@ The model must generalize across unrelated domains.
 
 ## Decision
 
-Features, constraints, configurable elements, configurations, and variants are domain-neutral concepts. Concrete terminology and data enter through applications and adapters.
+Features, model constraints, elements, element usages, configurations, variant records, structural variants, analysis dimensions, scenarios, and portfolios are domain-neutral concepts. Concrete terminology and data enter through applications and adapters.
 
 ## Consequences
 
@@ -16,4 +16,4 @@ Domain assumptions stay out of shared evaluation logic. Reference fixtures may u
 
 ## Validation
 
-Represent at least two unrelated domains without changing core evaluation semantics.
+Represent at least two unrelated domains without changing core evaluation semantics, structural identity rules, or analysis counting rules.

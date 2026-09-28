@@ -4,11 +4,11 @@ Status: **Proposed**.
 
 ## Context
 
-Users must reorder, hide, and combine dimensions without changing domain rules.
+Users must reorder, hide, and combine feature-derived, imported, or derived analysis dimensions without changing domain rules or population membership.
 
 ## Decision
 
-Represent view choices separately in an `AnalysisView`; derive the tree from normalized analysis results.
+Represent view choices separately in an `AnalysisView`; derive the tree from an identified normalized analysis population.
 
 ## Consequences
 
@@ -16,4 +16,4 @@ Projection and grouping require explicit aggregation semantics. Tree identity do
 
 ## Validation
 
-Reordering preserves overall results, hiding preserves configurations, and grouping follows documented set and count rules.
+Reordering preserves overall results, hiding preserves records, and grouping follows documented configuration, record, variant, and element count rules.
