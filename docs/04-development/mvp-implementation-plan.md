@@ -26,9 +26,10 @@ Import one versioned recipe population and answer basic questions about recipe c
    - Produce an `AnalysisPopulation` through the domain-independent core types only.
    - Implemented by `FoodServiceFixtureAdapter`, with tests for fixture import, rejection reporting, core analysis metrics, and manifest checksum rejection.
 
-2. [ ] Add fixture conformance tests.
+2. [x] Add fixture conformance tests.
    - Compare imported records, signatures, dimensions, rejected rows, query answers, leverage, and garlic-unavailability impact with `expected/results.json`.
    - Verify that altered source, mapping, derivation, or adapter bytes yield a different population version or are rejected against the manifest.
+   - Implemented by `FoodServiceFixtureConformanceTest`, which uses `expected/results.json` as the oracle and verifies manifest rejection for each input artifact.
 
 3. [ ] Define and implement the HTTP contract.
    - Expose population summary, filtered/grouped analysis, record detail, element leverage, and element-unavailability impact.

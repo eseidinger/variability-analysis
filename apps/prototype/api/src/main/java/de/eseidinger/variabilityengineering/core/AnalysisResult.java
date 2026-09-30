@@ -10,6 +10,7 @@ public record AnalysisResult(
         String populationId,
         String populationVersion,
         AnalysisQuery query,
+        Set<String> selectedRecordIds,
         Metrics metrics,
         List<Group> groups) {
 
@@ -90,7 +91,9 @@ public record AnalysisResult(
         Objects.requireNonNull(populationId, "populationId must not be null");
         Objects.requireNonNull(populationVersion, "populationVersion must not be null");
         Objects.requireNonNull(query, "query must not be null");
+        Objects.requireNonNull(selectedRecordIds, "selectedRecordIds must not be null");
         Objects.requireNonNull(metrics, "metrics must not be null");
+        selectedRecordIds = Set.copyOf(selectedRecordIds);
         groups = List.copyOf(groups);
     }
 }

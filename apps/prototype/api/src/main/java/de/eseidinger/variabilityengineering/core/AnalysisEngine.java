@@ -29,6 +29,7 @@ public final class AnalysisEngine {
                 population.id(),
                 population.version(),
                 query,
+                selected.stream().map(VariantRecord::id).collect(Collectors.toUnmodifiableSet()),
                 metrics(selected),
                 buildGroups(selected, query.groupingDimensions(), 0, List.of()));
     }
@@ -81,6 +82,7 @@ public final class AnalysisEngine {
                 population.id(),
                 population.version(),
                 query,
+                scenarioRecords.stream().map(VariantRecord::id).collect(Collectors.toUnmodifiableSet()),
                 metrics(scenarioRecords),
                 buildGroups(scenarioRecords, query.groupingDimensions(), 0, List.of()));
         var lostRecords = baselineRecords.stream()
