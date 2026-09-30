@@ -6,7 +6,7 @@ A domain-independent framework for modeling, analyzing, configuring, and optimiz
 
 The initial UI/API integration prototype and combined container image have been validated locally. Deployment through the Developer Platform remains to be verified.
 
-Development starts with a small runnable analysis application on the Developer Platform. Food service is the first planned real-world demonstration. Impact analysis, configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
+The API now contains an in-memory domain-independent analysis core for versioned observed populations. Food service is the first planned adapter and UI demonstration. Persistence, HTTP analysis endpoints, configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
 
 ## Initial prototype
 
@@ -31,7 +31,7 @@ Interactive analysis views, a food-service data adapter, impact analysis, config
 | Product | [Vision](docs/01-product/vision.md), [use cases](docs/01-product/use-cases.md), [requirements](docs/01-product/requirements.md), [roadmap](docs/01-product/roadmap.md) |
 | Architecture | [Overview](docs/02-architecture/overview.md), [domain model](docs/02-architecture/domain-model.md), [analysis view](docs/02-architecture/analysis-view.md), [food-service MVP semantics](docs/02-architecture/food-service-mvp-semantics.md), [persistence and deployment](docs/02-architecture/persistence-and-deployment.md) |
 | Decisions | [Architecture decision records](docs/03-decisions/README.md) |
-| Development | [Development plan](docs/04-development/development-plan.md), [quality assurance](docs/04-development/quality-assurance.md), [open decisions](docs/04-development/open-decisions.md) |
+| Development | [Development plan](docs/04-development/development-plan.md), [MVP implementation plan](docs/04-development/mvp-implementation-plan.md), [quality assurance](docs/04-development/quality-assurance.md), [open decisions](docs/04-development/open-decisions.md) |
 | Operations | [Prototype deployment](docs/05-operations/deployment.md) |
 | Traceability | [Sources and maintenance](docs/sources.md) |
 
