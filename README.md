@@ -6,7 +6,7 @@ A domain-independent framework for modeling, analyzing, configuring, and optimiz
 
 The initial UI/API integration prototype and combined container image have been validated locally. Deployment through the Developer Platform remains to be verified.
 
-The API now contains an in-memory domain-independent analysis core for versioned observed populations. Food service is the first planned adapter and UI demonstration. Persistence, HTTP analysis endpoints, configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
+The API now contains an in-memory domain-independent analysis core for versioned observed populations and a verified food-service fixture adapter. Food service remains the first UI demonstration. Persistence, HTTP analysis endpoints, configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
 
 ## Initial prototype
 
@@ -22,7 +22,7 @@ The stack-neutral workspace is documented in [`apps/prototype/`](apps/prototype/
 
 The normative observed-data example is the [food-service MVP v1 fixture](examples/food-service/mvp-v1/README.md).
 
-Interactive analysis views, a food-service data adapter, impact analysis, configuration assistance, portfolio optimization, additional language implementations, reusable UI components, and performance or storage experiments follow in later stages.
+Interactive analysis views, HTTP exposure of impact analysis, configuration assistance, portfolio optimization, additional language implementations, reusable UI components, and performance or storage experiments follow in later stages.
 
 ## Documentation
 

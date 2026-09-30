@@ -4,7 +4,7 @@
 
 The API contains a pure Java core in `de.eseidinger.variabilityengineering.core`. It provides immutable versioned analysis populations, structural variants, record and dimension validation, explicit filters, ordered grouping trees, metrics, element leverage, and whole-record element-unavailability impact scenarios.
 
-The core is independent of food-service terminology, HTTP, persistence, and UI frameworks. The [food-service MVP fixture](../../../examples/food-service/mvp-v1/README.md) is the next adapter input; importing that fixture, storing populations, and exposing analysis endpoints remain separate work.
+The core is independent of food-service terminology, HTTP, persistence, and UI frameworks. `de.eseidinger.variabilityengineering.adapter.foodservice.FoodServiceFixtureAdapter` verifies the [food-service MVP fixture](../../../examples/food-service/mvp-v1/README.md), normalizes its aliases, derives dimensions, preserves artifact provenance, and returns rejected records. Storing populations and exposing analysis endpoints remain separate work.
 
 Run the core and API tests with:
 

@@ -15,7 +15,7 @@ Updated on September 30, 2026 to incorporate the broader variability-engineering
 
 ## Status and evidence
 
-The initial Angular/Quarkus UI/API integration and combined local container image are implemented. The API now contains an in-memory, domain-independent observed-population analysis core with unit tests. Persistence, fixture import, HTTP analysis endpoints, UI analysis views, generative model evaluation, and the broader framework capabilities remain planned. The prototype application is the first deliverable; reusable framework components follow after semantics and interfaces have been validated with synthetic fixtures and the food-service reference domain.
+The initial Angular/Quarkus UI/API integration and combined local container image are implemented. The API now contains an in-memory, domain-independent observed-population analysis core with unit tests and a verified food-service fixture adapter. Persistence, HTTP analysis endpoints, UI analysis views, generative model evaluation, and the broader framework capabilities remain planned. The prototype application is the first deliverable; reusable framework components follow after semantics and interfaces have been validated with synthetic fixtures and the food-service reference domain.
 
 - **Requirement:** intended project scope, not implementation evidence.
 - **Documented direction:** an objective recorded in the current project description.
@@ -25,7 +25,7 @@ The initial Angular/Quarkus UI/API integration and combined local container imag
 - **Implemented:** reserved for behavior present in source.
 - **Verified:** reserved for a recorded, reproducible check.
 
-The repository evidences a UI/API status integration, local container assembly, and an in-memory domain evaluation core covered by unit tests. It does not yet evidence PostgreSQL round trips, fixture import, food-service UI/API behavior, optimization, or successful deployment to the Developer Platform.
+The repository evidences a UI/API status integration, local container assembly, an in-memory domain evaluation core, and verified import of the food-service fixture. It does not yet evidence PostgreSQL round trips, food-service HTTP or UI behavior, optimization, or successful deployment to the Developer Platform.
 
 ## Maintenance
 

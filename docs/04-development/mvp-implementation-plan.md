@@ -19,11 +19,12 @@ Import one versioned recipe population and answer basic questions about recipe c
 
 ## Next implementation steps
 
-1. [ ] Implement a food-service fixture adapter in the API.
+1. [x] Implement a food-service fixture adapter in the API.
    - Read the source, alias, classification, adapter-contract, and manifest artifacts.
    - Verify input digests before import.
    - Normalize aliases, derive diet and allergen values, create provenance, and report rejected rows.
    - Produce an `AnalysisPopulation` through the domain-independent core types only.
+   - Implemented by `FoodServiceFixtureAdapter`, with tests for fixture import, rejection reporting, core analysis metrics, and manifest checksum rejection.
 
 2. [ ] Add fixture conformance tests.
    - Compare imported records, signatures, dimensions, rejected rows, query answers, leverage, and garlic-unavailability impact with `expected/results.json`.
