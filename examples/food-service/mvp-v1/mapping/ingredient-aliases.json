@@ -1,0 +1,32 @@
+{
+  "mappingId": "food-service-mvp-ingredient-aliases",
+  "version": "1.0.0",
+  "caseSensitive": false,
+  "trimWhitespace": true,
+  "ingredients": [
+    {"id": "basil", "sourceValues": ["basil", "basil leaves"]},
+    {"id": "bell-pepper", "sourceValues": ["bell pepper"]},
+    {"id": "black-bean", "sourceValues": ["black bean", "black beans"]},
+    {"id": "cheese", "sourceValues": ["cheese"]},
+    {"id": "chicken", "sourceValues": ["chicken"]},
+    {"id": "chickpea", "sourceValues": ["chickpea", "chickpeas"]},
+    {"id": "coconut-milk", "sourceValues": ["coconut milk"]},
+    {"id": "corn", "sourceValues": ["corn"]},
+    {"id": "egg", "sourceValues": ["egg", "eggs"]},
+    {"id": "garlic", "sourceValues": ["garlic", "garlic clove"]},
+    {"id": "lentil", "sourceValues": ["lentil", "lentils"]},
+    {"id": "lime", "sourceValues": ["lime"]},
+    {"id": "market-greens", "sourceValues": ["market greens"]},
+    {"id": "mushroom", "sourceValues": ["mushroom", "mushrooms"]},
+    {"id": "olive-oil", "sourceValues": ["olive oil", "extra virgin olive oil"]},
+    {"id": "onion", "sourceValues": ["onion", "onions"]},
+    {"id": "peanut", "sourceValues": ["peanut", "peanuts"]},
+    {"id": "potato", "sourceValues": ["potato", "potatoes"]},
+    {"id": "rice", "sourceValues": ["rice"]},
+    {"id": "sesame", "sourceValues": ["sesame", "sesame seeds"]},
+    {"id": "soy-sauce", "sourceValues": ["soy sauce"]},
+    {"id": "tofu", "sourceValues": ["tofu"]},
+    {"id": "tomato", "sourceValues": ["tomato", "tomatoes"]},
+    {"id": "wheat-pasta", "sourceValues": ["pasta", "spaghetti"]}
+  ]
+}

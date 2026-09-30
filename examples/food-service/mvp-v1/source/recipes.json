@@ -1,0 +1,98 @@
+{
+  "datasetId": "food-service-mvp",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "records": [
+    {
+      "id": "recipe-001",
+      "name": "Tomato Basil Pasta",
+      "cuisine": "ITALIAN",
+      "dishType": "MAIN",
+      "ingredients": ["Tomatoes", "pasta", "Basil", "Garlic", "Olive oil"]
+    },
+    {
+      "id": "recipe-002",
+      "name": "Garden Tomato Pasta",
+      "cuisine": "MEDITERRANEAN",
+      "dishType": "MAIN",
+      "ingredients": ["extra virgin olive oil", "garlic clove", "basil leaves", "spaghetti", "tomato", "Tomatoes"]
+    },
+    {
+      "id": "recipe-003",
+      "name": "Coconut Chickpea Rice",
+      "cuisine": "INDIAN",
+      "dishType": "MAIN",
+      "ingredients": ["chickpeas", "rice", "coconut milk", "onion", "garlic"]
+    },
+    {
+      "id": "recipe-004",
+      "name": "Tofu Sesame Rice",
+      "cuisine": "EAST_ASIAN",
+      "dishType": "MAIN",
+      "ingredients": ["tofu", "rice", "soy sauce", "sesame seeds", "garlic"]
+    },
+    {
+      "id": "recipe-005",
+      "name": "Chicken Tomato Rice",
+      "cuisine": "MEDITERRANEAN",
+      "dishType": "MAIN",
+      "ingredients": ["chicken", "rice", "tomato", "onion", "garlic"]
+    },
+    {
+      "id": "recipe-006",
+      "name": "Peanut Tofu Bowl",
+      "cuisine": "SOUTHEAST_ASIAN",
+      "dishType": "BOWL",
+      "ingredients": ["peanuts", "tofu", "rice", "soy sauce", "lime"]
+    },
+    {
+      "id": "recipe-007",
+      "name": "Lentil Tomato Stew",
+      "cuisine": "MIDDLE_EASTERN",
+      "dishType": "STEW",
+      "ingredients": ["lentils", "tomato", "potato", "onion", "garlic"]
+    },
+    {
+      "id": "recipe-008",
+      "name": "Potato Egg Skillet",
+      "cuisine": "EUROPEAN",
+      "dishType": "MAIN",
+      "ingredients": ["potato", "egg", "onion", "olive oil"]
+    },
+    {
+      "id": "recipe-009",
+      "name": "Mushroom Cheese Pasta",
+      "cuisine": "ITALIAN",
+      "dishType": "MAIN",
+      "ingredients": ["mushrooms", "cheese", "pasta", "garlic"]
+    },
+    {
+      "id": "recipe-010",
+      "name": "Black Bean Corn Bowl",
+      "cuisine": "LATIN_AMERICAN",
+      "dishType": "BOWL",
+      "ingredients": ["black beans", "corn", "tomato", "lime", "onion"]
+    },
+    {
+      "id": "recipe-011",
+      "name": "Mystery Market Bowl",
+      "cuisine": null,
+      "dishType": "BOWL",
+      "ingredients": ["market greens", "rice", "garlic"]
+    },
+    {
+      "id": "recipe-012",
+      "name": "Sesame Tomato Salad",
+      "cuisine": "MEDITERRANEAN",
+      "dishType": "SALAD",
+      "ingredients": ["sesame", "tomato", "bell pepper", "lime", "olive oil"]
+    },
+    {
+      "id": "recipe-013",
+      "name": "Unmapped Pantry Special",
+      "cuisine": "EXPERIMENTAL",
+      "dishType": "MAIN",
+      "ingredients": ["tomato", "chef secret mix"]
+    }
+  ]
+}

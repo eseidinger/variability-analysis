@@ -17,3 +17,5 @@ Status: planning sequence without confirmed dates or effort estimates.
 | 11. Experiments and additional domains | Defined algorithm or storage comparisons and cross-domain validation | Workload, method, evidence, and limitations published |
 
 The synthetic fixture remains the first correctness oracle. The food-service demonstration follows interactive analysis so a real observed dataset can validate the abstractions before they are extracted into multiple framework implementations. Optimization starts with small fully enumerable portfolio fixtures; adopting a specialized solver is a later evidence-driven decision.
+
+The selected observed-data correctness oracle is the versioned [food-service MVP v1 fixture](../../examples/food-service/mvp-v1/README.md). Its expected results cover normalization, dimensions, filtering, leverage, and ingredient unavailability.

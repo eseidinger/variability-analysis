@@ -1,6 +1,6 @@
 # Domain Model
 
-Status: core analysis concepts are requirements; observed-record, scenario, portfolio, and quantitative-usage semantics are documented direction requiring schemas and conformance cases.
+Status: core analysis concepts are requirements; food-service analysis semantics are binding for the MVP; portfolio and quantitative-usage semantics remain documented direction requiring later contracts and conformance cases.
 
 | Term | Meaning |
 |---|---|
@@ -64,8 +64,9 @@ A portfolio selects variant records from an identified candidate population. It 
 An optimization result includes the input versions, feasible portfolio, objective values, constraint evaluations, and solver status. With competing objectives, the result may contain a Pareto frontier rather than one globally best portfolio.
 
 In the food-service mapping, a recipe or dish is a variant record, an ingredient is an element, cuisine and diet are analysis dimensions, and a menu is a portfolio.
+The binding food-service analysis subset, including structural identity, dimension cardinality, missing values, version provenance, filters, metrics, and ingredient unavailability, is defined in [Food-Service Analysis MVP Semantics](food-service-mvp-semantics.md). Later quantity, portfolio, and optimization semantics must not be inferred from that MVP contract.
 
-## Reference fixture
+
 
 Features are `region = EU | US`, `advanced = false | true`, and `theme = light | dark`. Elements are `base: true`, `reporting: advanced`, and `euPolicy: region = EU`. With no constraints, the fixture has eight valid configurations, eight generated records, and four distinct variants. Adding `NOT (region = US AND advanced = true)` produces six valid configurations, six generated records, and three distinct variants.
 

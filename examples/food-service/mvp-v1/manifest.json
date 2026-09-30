@@ -1,0 +1,42 @@
+{
+  "fixtureId": "food-service-mvp",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "artifacts": [
+    {
+      "role": "sourceDataset",
+      "id": "food-service-mvp",
+      "version": "1.0.0",
+      "path": "source/recipes.json",
+      "sha256": "5bd64d1e3369b3eb98434fcd9d65475916a69dd1eb94078056cd45dc7be9cdd2"
+    },
+    {
+      "role": "mapping",
+      "id": "food-service-mvp-ingredient-aliases",
+      "version": "1.0.0",
+      "path": "mapping/ingredient-aliases.json",
+      "sha256": "a189ff25a85ddc45dfd7369b510137441e4b69f267ce34a206afdf1c8a3ae0cf"
+    },
+    {
+      "role": "derivation",
+      "id": "food-service-mvp-classifications",
+      "version": "1.0.0",
+      "path": "derivation/ingredient-classifications.json",
+      "sha256": "8cccf7550adca3cb31ef0049d2f2f300d656ec1b3026a5cd2e5135b92d47bf0e"
+    },
+    {
+      "role": "adapterContract",
+      "id": "food-service-reference-json-adapter",
+      "version": "1.0.0",
+      "path": "adapter/contract.json",
+      "sha256": "2f59e198ebd465d7d67bc5f5771781a3ccb6aa00f521985c86f75fac41d6d866"
+    },
+    {
+      "role": "expectedResults",
+      "id": "food-service-mvp-expected-results",
+      "version": "1.0.0",
+      "path": "expected/results.json",
+      "sha256": "136d0c882e89f4f631779409c15a600c62eb007c68340c4dc1298301073ba9ab"
+    }
+  ]
+}

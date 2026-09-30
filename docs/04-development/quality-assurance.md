@@ -15,7 +15,12 @@ Status: proposed verification approach.
 | Projection | Hiding alone does not remove records. |
 | Aggregation | Distinct variants use set operations rather than additive counts. |
 | Imported population | License, source version, mapping version, rejected rows, missing values, and derivations are recorded. |
+| MVP structural identity | Alias normalization precedes set comparison; ordering, duplicates, quantities, and recipe identity do not change the binary signature. |
+| Missing and empty values | Explicit unknown values remain distinct from known empty multi-valued classifications. |
+| Multi-valued grouping | Overlapping child groups do not inflate root record, variant, or element metrics. |
+| Population versioning | A changed dataset checksum, adapter, mapping, or derivation produces a new immutable population version. |
 | Impact scenario | The baseline, operation, feasibility rule, and absolute and relative deltas are reproducible. |
+| Ingredient unavailability | Every record using an unavailable ingredient is excluded as a whole and the baseline remains unchanged. |
 | Partial requirements | Every completion is valid and compatible; exhaustive fixtures contain no omitted compatible completion. |
 | Portfolio feasibility | Every selected record belongs to the candidate population and every portfolio constraint is evaluated. |
 | Optimization | Small fixtures match exhaustive feasible sets and objective values; solver status supports every optimality claim. |

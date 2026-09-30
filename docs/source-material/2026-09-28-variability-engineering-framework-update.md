@@ -1,5 +1,7 @@
 # Variability Engineering Framework
 
+> **Archived source document.** Its product and architecture direction is incorporated into the canonical documentation. When conflicts occur, the canonical product, architecture, and architecture decision record documents take precedence.
+
 Status: product and architecture direction incorporated into the canonical documentation on September 28, 2026. Capabilities beyond the initial UI/API integration remain planned unless the repository records implementation evidence.
 
 ## Overview

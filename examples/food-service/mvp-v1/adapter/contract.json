@@ -1,0 +1,14 @@
+{
+  "adapterId": "food-service-reference-json-adapter",
+  "version": "1.0.0",
+  "rules": {
+    "recordIdentity": "source record id within dataset version",
+    "ingredientLookup": ["trim whitespace", "case-fold", "exact alias lookup"],
+    "duplicateIngredients": "collapse after canonicalization",
+    "unmappedIngredient": "reject complete source record with UNMAPPED_INGREDIENT",
+    "cuisine": "import source value; null becomes UNKNOWN",
+    "dishType": "import source value; null becomes UNKNOWN",
+    "diet": "derive from canonical ingredient classifications",
+    "allergen": "derive union from canonical ingredient classifications"
+  }
+}

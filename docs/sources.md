@@ -13,7 +13,7 @@ The listed website pages were reviewed on September 27, 2026. The framework upda
 | [Writing](https://www.eseidinger.de/writing/) | Articles in preparation; no published prototype results at review time. |
 | [Projects](https://www.eseidinger.de/projects/) | Relationship between platform, application, and lab. |
 | [Lab](https://www.eseidinger.de/lab/) | Shared experimental method and investigation status. |
-| [Framework update](../update.md) | Broader variability-engineering vision, food-service demonstration, impact analysis, configuration assistance, and optimization goals. |
+| [Framework update](source-material/2026-09-28-variability-engineering-framework-update.md) | Archived source for the broader variability-engineering vision, food-service demonstration, impact analysis, configuration assistance, and optimization goals. Canonical documents take precedence. |
 
 ## Maintenance
 

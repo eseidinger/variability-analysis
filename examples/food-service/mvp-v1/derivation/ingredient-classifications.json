@@ -1,0 +1,38 @@
+{
+  "derivationId": "food-service-mvp-classifications",
+  "version": "1.0.0",
+  "supportedDiets": ["VEGAN", "VEGETARIAN"],
+  "supportedAllergens": ["EGG", "GLUTEN", "MILK", "PEANUT", "SESAME", "SOY"],
+  "dietRules": {
+    "VEGAN": "all ingredients have containsAnimalProduct=false",
+    "VEGETARIAN": "all ingredients have containsMeat=false",
+    "unknown": "any ingredient has an unknown property needed by the rule"
+  },
+  "allergenRule": "union known ingredient allergens; UNKNOWN if any ingredient allergen list is unknown",
+  "ingredients": [
+    {"id": "basil", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "bell-pepper", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "black-bean", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "cheese", "containsAnimalProduct": true, "containsMeat": false, "allergens": ["MILK"]},
+    {"id": "chicken", "containsAnimalProduct": true, "containsMeat": true, "allergens": []},
+    {"id": "chickpea", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "coconut-milk", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "corn", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "egg", "containsAnimalProduct": true, "containsMeat": false, "allergens": ["EGG"]},
+    {"id": "garlic", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "lentil", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "lime", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "market-greens", "containsAnimalProduct": null, "containsMeat": null, "allergens": null},
+    {"id": "mushroom", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "olive-oil", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "onion", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "peanut", "containsAnimalProduct": false, "containsMeat": false, "allergens": ["PEANUT"]},
+    {"id": "potato", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "rice", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "sesame", "containsAnimalProduct": false, "containsMeat": false, "allergens": ["SESAME"]},
+    {"id": "soy-sauce", "containsAnimalProduct": false, "containsMeat": false, "allergens": ["GLUTEN", "SOY"]},
+    {"id": "tofu", "containsAnimalProduct": false, "containsMeat": false, "allergens": ["SOY"]},
+    {"id": "tomato", "containsAnimalProduct": false, "containsMeat": false, "allergens": []},
+    {"id": "wheat-pasta", "containsAnimalProduct": false, "containsMeat": false, "allergens": ["GLUTEN"]}
+  ]
+}

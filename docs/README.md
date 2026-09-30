@@ -1,13 +1,13 @@
 # Variability Engineering Framework Documentation
 
-Updated on September 28, 2026 to incorporate the broader variability-engineering vision and the food-service demonstration use case. This documentation covers the product, target architecture, architectural decisions, development sequence, and prototype operations.
+Updated on September 30, 2026 to incorporate the broader variability-engineering vision, the food-service demonstration use case, and the binding food-service analysis MVP semantics. This documentation covers the product, target architecture, architectural decisions, development sequence, and prototype operations.
 
 ## Getting started
 
 | Area | Key question | Documents |
 |---|---|---|
 | Product | Who is this for, and what should it achieve? | [Vision](01-product/vision.md), [Use cases](01-product/use-cases.md), [Requirements](01-product/requirements.md), [Roadmap](01-product/roadmap.md) |
-| Architecture | How should modeling, analysis, configuration, and optimization work? | [Overview](02-architecture/overview.md), [Domain model](02-architecture/domain-model.md), [Analysis view](02-architecture/analysis-view.md), [Persistence and deployment](02-architecture/persistence-and-deployment.md) |
+| Architecture | How should modeling, analysis, configuration, and optimization work? | [Overview](02-architecture/overview.md), [Domain model](02-architecture/domain-model.md), [Analysis view](02-architecture/analysis-view.md), [Food-service MVP semantics](02-architecture/food-service-mvp-semantics.md), [Persistence and deployment](02-architecture/persistence-and-deployment.md) |
 | Decisions | Why was this approach selected? | [ADR index](03-decisions/README.md) |
 | Development | What is built first, and how will it be verified? | [Development plan](04-development/development-plan.md), [Quality assurance](04-development/quality-assurance.md), [Open decisions](04-development/open-decisions.md) |
 | Traceability | Which sources support the baseline, and how is it maintained? | [Sources and maintenance](sources.md) |
@@ -21,6 +21,7 @@ The initial Angular/Quarkus UI/API integration and combined local container imag
 - **Documented direction:** an objective recorded in the current project description.
 - **Proposal:** a design requiring confirmation.
 - **Open:** unresolved or insufficiently specified.
+- **Accepted:** a binding design choice; acceptance does not by itself prove implementation.
 - **Implemented:** reserved for behavior present in source.
 - **Verified:** reserved for a recorded, reproducible check.
 

@@ -1,0 +1,205 @@
+{
+  "fixtureId": "food-service-mvp",
+  "version": "1.0.0",
+  "import": {
+    "sourceRecordCount": 13,
+    "acceptedRecordCount": 12,
+    "rejectedRecords": [
+      {
+        "sourceRecordId": "recipe-013",
+        "reason": "UNMAPPED_INGREDIENT",
+        "detail": "No canonical ingredient mapping exists for: chef secret mix"
+      }
+    ]
+  },
+  "rootMetrics": {
+    "recordCount": 12,
+    "variantCount": 11,
+    "uniqueElementCount": 24
+  },
+  "populationProvenance": {
+    "populationId": "food-service-mvp",
+    "populationVersion": "1.0.0",
+    "sourceDataset": {"id": "food-service-mvp", "version": "1.0.0", "sha256": "5bd64d1e3369b3eb98434fcd9d65475916a69dd1eb94078056cd45dc7be9cdd2"},
+    "adapter": {"id": "food-service-reference-json-adapter", "version": "1.0.0", "sha256": "2f59e198ebd465d7d67bc5f5771781a3ccb6aa00f521985c86f75fac41d6d866"},
+    "mapping": {"id": "food-service-mvp-ingredient-aliases", "version": "1.0.0", "sha256": "a189ff25a85ddc45dfd7369b510137441e4b69f267ce34a206afdf1c8a3ae0cf"},
+    "derivation": {"id": "food-service-mvp-classifications", "version": "1.0.0", "sha256": "8cccf7550adca3cb31ef0049d2f2f300d656ec1b3026a5cd2e5135b92d47bf0e"}
+  },
+  "dimensionDefinitions": {
+    "cuisine": {"cardinality": "SINGLE", "origin": "IMPORTED"},
+    "dishType": {"cardinality": "SINGLE", "origin": "IMPORTED"},
+    "diet": {"cardinality": "MULTI", "origin": "DERIVED", "derivationId": "food-service-mvp-classifications", "derivationVersion": "1.0.0"},
+    "allergen": {"cardinality": "MULTI", "origin": "DERIVED", "derivationId": "food-service-mvp-classifications", "derivationVersion": "1.0.0"}
+  },
+  "records": [
+    {
+      "id": "recipe-001",
+      "elements": ["basil", "garlic", "olive-oil", "tomato", "wheat-pasta"],
+      "dimensions": {"cuisine": ["ITALIAN"], "dishType": ["MAIN"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": ["GLUTEN"]}
+    },
+    {
+      "id": "recipe-002",
+      "elements": ["basil", "garlic", "olive-oil", "tomato", "wheat-pasta"],
+      "dimensions": {"cuisine": ["MEDITERRANEAN"], "dishType": ["MAIN"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": ["GLUTEN"]}
+    },
+    {
+      "id": "recipe-003",
+      "elements": ["chickpea", "coconut-milk", "garlic", "onion", "rice"],
+      "dimensions": {"cuisine": ["INDIAN"], "dishType": ["MAIN"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": []}
+    },
+    {
+      "id": "recipe-004",
+      "elements": ["garlic", "rice", "sesame", "soy-sauce", "tofu"],
+      "dimensions": {"cuisine": ["EAST_ASIAN"], "dishType": ["MAIN"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": ["GLUTEN", "SESAME", "SOY"]}
+    },
+    {
+      "id": "recipe-005",
+      "elements": ["chicken", "garlic", "onion", "rice", "tomato"],
+      "dimensions": {"cuisine": ["MEDITERRANEAN"], "dishType": ["MAIN"], "diet": [], "allergen": []}
+    },
+    {
+      "id": "recipe-006",
+      "elements": ["lime", "peanut", "rice", "soy-sauce", "tofu"],
+      "dimensions": {"cuisine": ["SOUTHEAST_ASIAN"], "dishType": ["BOWL"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": ["GLUTEN", "PEANUT", "SOY"]}
+    },
+    {
+      "id": "recipe-007",
+      "elements": ["garlic", "lentil", "onion", "potato", "tomato"],
+      "dimensions": {"cuisine": ["MIDDLE_EASTERN"], "dishType": ["STEW"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": []}
+    },
+    {
+      "id": "recipe-008",
+      "elements": ["egg", "olive-oil", "onion", "potato"],
+      "dimensions": {"cuisine": ["EUROPEAN"], "dishType": ["MAIN"], "diet": ["VEGETARIAN"], "allergen": ["EGG"]}
+    },
+    {
+      "id": "recipe-009",
+      "elements": ["cheese", "garlic", "mushroom", "wheat-pasta"],
+      "dimensions": {"cuisine": ["ITALIAN"], "dishType": ["MAIN"], "diet": ["VEGETARIAN"], "allergen": ["GLUTEN", "MILK"]}
+    },
+    {
+      "id": "recipe-010",
+      "elements": ["black-bean", "corn", "lime", "onion", "tomato"],
+      "dimensions": {"cuisine": ["LATIN_AMERICAN"], "dishType": ["BOWL"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": []}
+    },
+    {
+      "id": "recipe-011",
+      "elements": ["garlic", "market-greens", "rice"],
+      "dimensions": {"cuisine": null, "dishType": ["BOWL"], "diet": null, "allergen": null}
+    },
+    {
+      "id": "recipe-012",
+      "elements": ["bell-pepper", "lime", "olive-oil", "sesame", "tomato"],
+      "dimensions": {"cuisine": ["MEDITERRANEAN"], "dishType": ["SALAD"], "diet": ["VEGAN", "VEGETARIAN"], "allergen": ["SESAME"]}
+    }
+  ],
+  "equalStructuralVariants": [
+    ["recipe-001", "recipe-002"]
+  ],
+  "elementRecordCounts": {
+    "basil": 2,
+    "bell-pepper": 1,
+    "black-bean": 1,
+    "cheese": 1,
+    "chicken": 1,
+    "chickpea": 1,
+    "coconut-milk": 1,
+    "corn": 1,
+    "egg": 1,
+    "garlic": 8,
+    "lentil": 1,
+    "lime": 3,
+    "market-greens": 1,
+    "mushroom": 1,
+    "olive-oil": 4,
+    "onion": 5,
+    "peanut": 1,
+    "potato": 2,
+    "rice": 5,
+    "sesame": 2,
+    "soy-sauce": 2,
+    "tofu": 2,
+    "tomato": 6,
+    "wheat-pasta": 3
+  },
+  "groupRecordCounts": {
+    "cuisine": {
+      "EAST_ASIAN": 1,
+      "EUROPEAN": 1,
+      "INDIAN": 1,
+      "ITALIAN": 2,
+      "LATIN_AMERICAN": 1,
+      "MEDITERRANEAN": 3,
+      "MIDDLE_EASTERN": 1,
+      "SOUTHEAST_ASIAN": 1,
+      "UNKNOWN": 1
+    },
+    "diet": {
+      "VEGAN": 8,
+      "VEGETARIAN": 10,
+      "KNOWN_EMPTY": 1,
+      "UNKNOWN": 1
+    },
+    "allergen": {
+      "EGG": 1,
+      "GLUTEN": 5,
+      "MILK": 1,
+      "PEANUT": 1,
+      "SESAME": 2,
+      "SOY": 2,
+      "KNOWN_EMPTY": 4,
+      "UNKNOWN": 1
+    }
+  },
+  "queries": {
+    "dietIsVegan": {
+      "recordIds": ["recipe-001", "recipe-002", "recipe-003", "recipe-004", "recipe-006", "recipe-007", "recipe-010", "recipe-012"],
+      "metrics": {"recordCount": 8, "variantCount": 7, "uniqueElementCount": 19}
+    },
+    "cuisineIsItalian": {
+      "recordIds": ["recipe-001", "recipe-009"],
+      "metrics": {"recordCount": 2, "variantCount": 2, "uniqueElementCount": 7}
+    },
+    "containsTomato": {
+      "recordIds": ["recipe-001", "recipe-002", "recipe-005", "recipe-007", "recipe-010", "recipe-012"],
+      "metrics": {"recordCount": 6, "variantCount": 5, "uniqueElementCount": 15}
+    },
+    "knownFreeOfSupportedAllergens": {
+      "recordIds": ["recipe-003", "recipe-005", "recipe-007", "recipe-010"],
+      "metrics": {"recordCount": 4, "variantCount": 4, "uniqueElementCount": 12}
+    }
+  },
+  "elementLeverage": {
+    "garlic": {
+      "recordCount": 8,
+      "knownCuisineCount": 5,
+      "knownCuisineValues": ["EAST_ASIAN", "INDIAN", "ITALIAN", "MEDITERRANEAN", "MIDDLE_EASTERN"],
+      "knownDietCount": 2,
+      "knownDietValues": ["VEGAN", "VEGETARIAN"]
+    }
+  },
+  "scenarios": {
+    "garlicUnavailable": {
+      "unavailableElementIds": ["garlic"],
+      "remainingRecordIds": ["recipe-006", "recipe-008", "recipe-010", "recipe-012"],
+      "lostRecordIds": ["recipe-001", "recipe-002", "recipe-003", "recipe-004", "recipe-005", "recipe-007", "recipe-009", "recipe-011"],
+      "lostStructuralVariants": [["basil", "garlic", "olive-oil", "tomato", "wheat-pasta"], ["chickpea", "coconut-milk", "garlic", "onion", "rice"], ["garlic", "rice", "sesame", "soy-sauce", "tofu"], ["chicken", "garlic", "onion", "rice", "tomato"], ["garlic", "lentil", "onion", "potato", "tomato"], ["cheese", "garlic", "mushroom", "wheat-pasta"], ["garlic", "market-greens", "rice"]],
+      "lostElementIds": ["basil", "cheese", "chicken", "chickpea", "coconut-milk", "garlic", "lentil", "market-greens", "mushroom", "wheat-pasta"],
+      "baselineMetrics": {"recordCount": 12, "variantCount": 11, "uniqueElementCount": 24},
+      "scenarioMetrics": {"recordCount": 4, "variantCount": 4, "uniqueElementCount": 14},
+      "absoluteDelta": {"recordCount": -8, "variantCount": -7, "uniqueElementCount": -10},
+      "relativeDelta": {"recordCount": -0.6666666667, "variantCount": -0.6363636364, "uniqueElementCount": -0.4166666667},
+      "cuisineRecordCountDelta": {
+        "EAST_ASIAN": -1,
+        "EUROPEAN": 0,
+        "INDIAN": -1,
+        "ITALIAN": -2,
+        "LATIN_AMERICAN": 0,
+        "MEDITERRANEAN": -2,
+        "MIDDLE_EASTERN": -1,
+        "SOUTHEAST_ASIAN": 0,
+        "UNKNOWN": -1
+      }
+    }
+  }
+}
