@@ -31,10 +31,11 @@ Import one versioned recipe population and answer basic questions about recipe c
    - Verify that altered source, mapping, derivation, or adapter bytes yield a different population version or are rejected against the manifest.
    - Implemented by `FoodServiceFixtureConformanceTest`, which uses `expected/results.json` as the oracle and verifies manifest rejection for each input artifact.
 
-3. [ ] Define and implement the HTTP contract.
+3. [x] Define and implement the HTTP contract.
    - Expose population summary, filtered/grouped analysis, record detail, element leverage, and element-unavailability impact.
    - Return the population version, active filters, metrics, and scenario rule in every result.
    - Keep request/response DTOs outside the core package.
+   - Implemented by the fixture-backed `FoodServiceAnalysisResource`; its documented contract and Quarkus HTTP tests cover successful and invalid requests.
 
 4. [ ] Add PostgreSQL persistence.
    - Resolve OPEN-05 through OPEN-07 for the MVP’s data shape, query workload, and limits.

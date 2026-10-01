@@ -7,7 +7,7 @@ Updated on September 30, 2026 to incorporate the broader variability-engineering
 | Area | Key question | Documents |
 |---|---|---|
 | Product | Who is this for, and what should it achieve? | [Vision](01-product/vision.md), [Use cases](01-product/use-cases.md), [Requirements](01-product/requirements.md), [Roadmap](01-product/roadmap.md) |
-| Architecture | How should modeling, analysis, configuration, and optimization work? | [Overview](02-architecture/overview.md), [Domain model](02-architecture/domain-model.md), [Analysis view](02-architecture/analysis-view.md), [Food-service MVP semantics](02-architecture/food-service-mvp-semantics.md), [Persistence and deployment](02-architecture/persistence-and-deployment.md) |
+| Architecture | How should modeling, analysis, configuration, and optimization work? | [Overview](02-architecture/overview.md), [Domain model](02-architecture/domain-model.md), [Analysis view](02-architecture/analysis-view.md), [Food-service MVP semantics](02-architecture/food-service-mvp-semantics.md), [Food-service HTTP contract](02-architecture/food-service-http-contract.md), [Persistence and deployment](02-architecture/persistence-and-deployment.md) |
 | Decisions | Why was this approach selected? | [ADR index](03-decisions/README.md) |
 | Development | What is built first, and how will it be verified? | [Development plan](04-development/development-plan.md), [MVP implementation plan](04-development/mvp-implementation-plan.md), [Quality assurance](04-development/quality-assurance.md), [Open decisions](04-development/open-decisions.md) |
 | Traceability | Which sources support the baseline, and how is it maintained? | [Sources and maintenance](sources.md) |
@@ -15,7 +15,7 @@ Updated on September 30, 2026 to incorporate the broader variability-engineering
 
 ## Status and evidence
 
-The initial Angular/Quarkus UI/API integration and combined local container image are implemented. The API now contains an in-memory, domain-independent observed-population analysis core with unit tests and a verified food-service fixture adapter. Persistence, HTTP analysis endpoints, UI analysis views, generative model evaluation, and the broader framework capabilities remain planned. The prototype application is the first deliverable; reusable framework components follow after semantics and interfaces have been validated with synthetic fixtures and the food-service reference domain.
+The initial Angular/Quarkus UI/API integration and combined local container image are implemented. The API now contains an in-memory, domain-independent observed-population analysis core with unit tests and a verified food-service fixture adapter. Persistence, UI analysis views, generative model evaluation, and the broader framework capabilities remain planned. The prototype application is the first deliverable; reusable framework components follow after semantics and interfaces have been validated with synthetic fixtures and the food-service reference domain.
 
 - **Requirement:** intended project scope, not implementation evidence.
 - **Documented direction:** an objective recorded in the current project description.
@@ -25,7 +25,7 @@ The initial Angular/Quarkus UI/API integration and combined local container imag
 - **Implemented:** reserved for behavior present in source.
 - **Verified:** reserved for a recorded, reproducible check.
 
-The repository evidences a UI/API status integration, local container assembly, an in-memory domain evaluation core, and verified import of the food-service fixture. It does not yet evidence PostgreSQL round trips, food-service HTTP or UI behavior, optimization, or successful deployment to the Developer Platform.
+The repository evidences a UI/API status integration, local container assembly, an in-memory domain evaluation core, and verified import of the food-service fixture. It does not yet evidence PostgreSQL round trips, food-service UI behavior, optimization, or successful deployment to the Developer Platform.
 
 ## Maintenance
 
