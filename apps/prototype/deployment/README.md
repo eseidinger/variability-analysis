@@ -42,3 +42,14 @@ Deployment configuration:
 - include the immutable food-service fixture for first-start database seeding;
 - provide application-specific readiness; and
 - operate within the documented CPU and memory limits.
+
+## GitHub Actions and Docker Hub
+
+The [build and publish workflow](../../../.github/workflows/build-test-publish.yml) runs the UI tests and build, API tests, and Compose black-box verification for every pull request and push. It publishes the combined image only for `main` and version tags beginning with `v`.
+
+Before enabling publishing, add these GitHub Actions repository secrets:
+
+- `DOCKERHUB_USERNAME`: the Docker Hub namespace that will own `variability-engineering-framework`.
+- `DOCKERHUB_TOKEN`: a Docker Hub access token with permission to push that repository.
+
+The resulting image names are `<username>/variability-engineering-framework:latest` for `main`, semantic-version tags for releases such as `v1.0.0`, and immutable `sha-...` tags.
