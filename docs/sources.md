@@ -2,12 +2,12 @@
 
 Status: source baseline for planning; links and discussion summaries do not constitute implementation or deployment evidence.
 
-The listed website pages were reviewed on September 27, 2026. The framework update was incorporated on September 28, 2026. Website material consists of project and lab pages rather than completed technical articles or benchmark reports.
+The listed website pages were reviewed and aligned with repository evidence on October 1, 2026. The framework update was incorporated on September 28, 2026. Website material consists of project and lab pages rather than completed technical articles or benchmark reports.
 
 | Source | Contribution |
 |---|---|
-| [Variability Analysis Project](https://www.eseidinger.de/projects/variability-analysis/) | Project pipeline, first prototype, PostgreSQL, shared container image, resource budget, and planning status. |
-| [Developer Platform](https://www.eseidinger.de/projects/software-development-platform/) | Operating foundation, PostgreSQL integration, and platform limitations. |
+| [Variability Engineering Framework](https://www.eseidinger.de/projects/variability-engineering-framework/) | Project pipeline, implemented food-service MVP, PostgreSQL, shared container image, resource observation, and remaining roadmap. |
+| [Developer Platform](https://www.eseidinger.de/projects/developer-platform/) | Operating foundation, PostgreSQL integration, and platform limitations. |
 | [Data Architecture Lab](https://www.eseidinger.de/lab/data-architecture/) | Workload-based storage comparisons and reproducibility. |
 | [Performance Lab](https://www.eseidinger.de/lab/performance/) | Planned calculation measurements and measurement method. |
 | [Writing](https://www.eseidinger.de/writing/) | Articles in preparation; no published prototype results at review time. |

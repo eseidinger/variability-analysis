@@ -15,7 +15,7 @@ Updated on October 1, 2026 to incorporate the broader variability-engineering vi
 
 ## Status and evidence
 
-The initial Angular/Quarkus UI/API integration and combined local container image are implemented. The API now contains an in-memory, domain-independent observed-population analysis core with unit tests and a verified food-service fixture adapter. UI analysis views, generative model evaluation, and the broader framework capabilities remain planned. The prototype application is the first deliverable; reusable framework components follow after semantics and interfaces have been validated with synthetic fixtures and the food-service reference domain.
+The food-service MVP is implemented across the Angular UI, Quarkus API, PostgreSQL persistence, and combined local container image. The API contains a domain-independent observed-population analysis core with unit and conformance tests, a verified food-service fixture adapter, and a public HTTP contract. The UI exposes summary metrics, filters, reorderable grouping, ingredient leverage, and ingredient-unavailability impact. Generative model evaluation and the broader framework capabilities remain planned; reusable framework components follow after the observed-population contracts have been validated further.
 
 - **Requirement:** intended project scope, not implementation evidence.
 - **Documented direction:** an objective recorded in the current project description.
@@ -25,7 +25,7 @@ The initial Angular/Quarkus UI/API integration and combined local container imag
 - **Implemented:** reserved for behavior present in source.
 - **Verified:** reserved for a recorded, reproducible check.
 
-The repository evidences a UI/API status integration, local container assembly, an in-memory domain evaluation core, verified import of the food-service fixture, and PostgreSQL round trips. It does not yet evidence food-service UI behavior, optimization, or successful deployment to the Developer Platform.
+The repository evidences food-service UI behavior, local container assembly, a domain-independent analysis core, verified fixture import, PostgreSQL round trips, public API behavior, and a Compose-backed black-box workload check. It does not yet evidence generative model evaluation, configuration assistance, optimization, actual Docker Hub publication, or successful deployment to the Developer Platform.
 
 ## Maintenance
 

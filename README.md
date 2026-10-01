@@ -4,25 +4,25 @@ A domain-independent framework for modeling, analyzing, configuring, and optimiz
 
 ## Status
 
-The initial UI/API integration prototype and combined container image have been validated locally. Deployment through the Developer Platform remains to be verified.
+The food-service analysis MVP and combined container image have been validated locally against PostgreSQL. Deployment through the Developer Platform remains to be verified. GitHub Actions build and test the application and are configured to publish the image to Docker Hub, but an actual publication is not yet recorded.
 
-The API now contains an in-memory domain-independent analysis core for versioned observed populations, a verified food-service fixture adapter, and PostgreSQL-backed population storage. Food service remains the first UI demonstration. Configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
+The API contains a domain-independent analysis core for versioned observed populations, a verified food-service fixture adapter, an HTTP analysis contract, and PostgreSQL-backed population storage. The Angular Material dashboard exposes summary metrics, filtering, reorderable grouping, ingredient leverage, and ingredient-unavailability impact. Generative models, configuration assistance, portfolio optimization, and reusable framework components remain later work.
 
-## Initial prototype
+## Implemented MVP
 
-The first application will:
+The first application:
 
-- define and validate small configuration models;
-- calculate valid configurations and their resulting variants with bounded enumeration;
-- save and reload models through PostgreSQL;
-- present results in a verifiable form; and
-- deploy its UI and API as one container image.
+- imports and verifies a versioned synthetic food-service population;
+- calculates record, structural-variant, ingredient, grouping, leverage, and unavailability results;
+- saves and reloads the immutable population through PostgreSQL;
+- presents the workload through an Angular UI and Quarkus API; and
+- packages and verifies the UI and API as one local container image.
 
 The stack-neutral workspace is documented in [`apps/prototype/`](apps/prototype/README.md).
 
 The normative observed-data example is the [food-service MVP v1 fixture](examples/food-service/mvp-v1/README.md).
 
-Interactive analysis views, configuration assistance, portfolio optimization, additional language implementations, reusable UI components, and performance or storage experiments follow in later stages.
+Generative model authoring, configuration assistance, portfolio optimization, external datasets, additional language implementations, reusable UI components, and broader performance or storage experiments follow in later stages.
 
 ## Documentation
 
