@@ -2,6 +2,7 @@ package de.eseidinger.variabilityengineering.http;
 
 import de.eseidinger.variabilityengineering.adapter.foodservice.FoodServiceFixtureAdapter;
 import de.eseidinger.variabilityengineering.core.AnalysisPopulation;
+import de.eseidinger.variabilityengineering.persistence.JdbcPopulationRepository;
 import io.smallrye.config.ConfigMapping;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
-/** Read-only, fixture-backed population source until persistence is introduced. */
+/** Fixture-backed population source persisted by immutable population ID and version. */
 @ApplicationScoped
 public class FoodServicePopulationStore {
 
@@ -24,6 +25,9 @@ public class FoodServicePopulationStore {
     @Inject
     FixtureConfig fixtureConfig;
 
+    @Inject
+    JdbcPopulationRepository repository;
+
     private AnalysisPopulation population;
     private List<FoodServiceFixtureAdapter.RejectedRecord> rejectedRecords;
 
@@ -31,8 +35,9 @@ public class FoodServicePopulationStore {
     void loadFixture() {
         try {
             var imported = new FoodServiceFixtureAdapter().importFixture(Path.of(fixtureConfig.directory()));
-            population = imported.population();
-            rejectedRecords = imported.rejectedRecords();
+            var persisted = repository.saveIfAbsent(imported.population(), imported.rejectedRecords());
+            population = persisted.population();
+            rejectedRecords = persisted.rejectedRecords();
         } catch (IOException exception) {
             throw new IllegalStateException("cannot load food-service fixture", exception);
         }

@@ -1,6 +1,6 @@
 # ADR-004 – PostgreSQL Persistence Baseline
 
-Status: **Documented direction**.
+Status: **Implemented for the food-service MVP**.
 
 ## Context
 
@@ -12,8 +12,8 @@ Use PostgreSQL for the first application persistence implementation.
 
 ## Consequences
 
-The choice does not yet determine relational versus JSONB structure. Other stores require a concrete workload and comparison.
+The MVP uses normalized relational tables for immutable populations, provenance, dimensions, records, element usages, dimension values, and rejected rows. Analyses are calculated on demand. Other stores require a concrete workload and comparison.
 
 ## Validation
 
-A model round trip preserves semantics, and data survives application workload recreation.
+Flyway applies the schema to PostgreSQL 17, and an automated fixture round trip preserves population, provenance, dimensions, records, rejected rows, and reference metrics.

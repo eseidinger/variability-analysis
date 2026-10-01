@@ -5,9 +5,6 @@
 | OPEN-02 | Which feature and expression types enter the first contract? | Determines validation and enumeration semantics. |
 | OPEN-03 | What does combining dimensions mean? | Value groups, composite dimensions, and visual summaries differ. |
 | OPEN-04 | How are model IDs, versions, and concurrent changes handled? | Determines persistence and result reuse. |
-| OPEN-05 | Which PostgreSQL representation fits actual access patterns? | Relational and JSONB designs have different tradeoffs. |
-| OPEN-06 | Are analysis results stored or calculated on demand? | Depends on size, reuse, and versioning. |
-| OPEN-07 | Which sizes and calculation times are supported? | Requires limits within the resource budget. |
 | OPEN-09 | How are invalid configurations explained? | Basic violations and minimal conflicts differ in complexity. |
 | OPEN-11 | Independent SDKs or a shared embedded engine? | Changes implementation and distribution strategy. |
 | OPEN-12 | Which application permissions are required? | Must be defined before broader access. |
@@ -17,7 +14,7 @@
 | OPEN-20 | Which optimization guarantees and solver status values are exposed? | Feasible, optimal, bounded, timed-out, and Pareto claims require precise evidence. |
 | OPEN-21 | Which external food-service dataset and version should follow the MVP fixture? | A broader demonstration requires a compatible license, stable source, usable fields, and documented mapping and derivation provenance. |
 
-OPEN-05 and OPEN-07 remain prerequisites for the persisted food-service MVP. Resolve OPEN-02, OPEN-04, and OPEN-09 before generative-model behavior, OPEN-03 before combined dimensions, OPEN-21 before importing an external food-service dataset, OPEN-18 before quantitative recipe usage, and OPEN-17, OPEN-19, and OPEN-20 before portfolio optimization.
+Resolve OPEN-02, OPEN-04, and OPEN-09 before generative-model behavior, OPEN-03 before combined dimensions, OPEN-21 before importing an external food-service dataset, OPEN-18 before quantitative recipe usage, and OPEN-17, OPEN-19, and OPEN-20 before portfolio optimization.
 
 ## Resolved implementation choices
 
@@ -30,3 +27,6 @@ OPEN-05 and OPEN-07 remain prerequisites for the persisted food-service MVP. Res
 | OPEN-14 | Every population records immutable dataset, adapter, mapping, and derivation identifiers, versions, and checksums. | [ADR-013](../03-decisions/ADR-013-food-service-analysis-mvp-semantics.md). |
 | OPEN-15 | Cuisine and dish type are single-valued; diets and allergens are multi-valued; known empty and explicit unknown states are distinct; derived values are versioned. | [ADR-013](../03-decisions/ADR-013-food-service-analysis-mvp-semantics.md). |
 | OPEN-16 | The first scenario operation is unavailability of one or more elements, which makes every record using one of them infeasible without changing the baseline. | [ADR-013](../03-decisions/ADR-013-food-service-analysis-mvp-semantics.md). |
+| OPEN-05 | The food-service MVP uses normalized PostgreSQL tables for versioned population, provenance, records, canonical element usages, dimension states/values, and rejected rows. | Flyway migration `V1__food_service_population.sql` and PostgreSQL round-trip test. |
+| OPEN-06 | MVP analysis results are calculated on demand from persisted populations; no analysis or scenario result cache is stored. | `JdbcPopulationRepository`, `AnalysisEngine`, and HTTP resource. |
+| OPEN-07 | The supported persisted workload is the food-service v1 fixture: 13 source rows, 12 accepted records, 11 variants, 24 elements, with on-demand analysis. Larger limits require a separate benchmark. | Fixture conformance and PostgreSQL round-trip tests. |

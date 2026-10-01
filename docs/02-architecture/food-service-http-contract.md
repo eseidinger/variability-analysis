@@ -4,7 +4,7 @@ Status: implemented, fixture-backed MVP contract. This contract exposes the bind
 
 ## Scope and population source
 
-The API serves the checked-in `food-service-mvp` population at version `1.0.0`. It imports the fixture once at application startup through the food-service adapter and keeps it read-only in memory. PostgreSQL-backed population storage is deliberately outside this contract and remains the next MVP step.
+The API serves the checked-in `food-service-mvp` population at version `1.0.0`. It imports the fixture at application startup through the food-service adapter, stores it in PostgreSQL when that immutable ID/version is absent, and then serves the persisted population.
 
 The fixture directory is configured by `variability.fixture.directory`; the development default is `../../../examples/food-service/mvp-v1`, relative to the API project directory.
 

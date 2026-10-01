@@ -37,10 +37,11 @@ Import one versioned recipe population and answer basic questions about recipe c
    - Keep request/response DTOs outside the core package.
    - Implemented by the fixture-backed `FoodServiceAnalysisResource`; its documented contract and Quarkus HTTP tests cover successful and invalid requests.
 
-4. [ ] Add PostgreSQL persistence.
+4. [x] Add PostgreSQL persistence.
    - Resolve OPEN-05 through OPEN-07 for the MVP’s data shape, query workload, and limits.
    - Persist fixture-derived populations, provenance, records, usages, dimensions, and rejected rows.
    - Verify save/load semantics and workload recreation.
+   - Implemented through Flyway and `JdbcPopulationRepository`; a PostgreSQL 17 Dev Services test verifies the fixture round trip and reference workload metrics.
 
 5. [ ] Build the food-service UI.
    - Show population provenance and summary metrics.

@@ -1,10 +1,10 @@
 # Persistence and Deployment Architecture
 
-Status: documented prototype direction; schema and operational acceptance remain open.
+Status: implemented food-service MVP persistence; production deployment and capacity acceptance remain open.
 
-The first prototype saves and loads generative configuration models through the Developer Platform PostgreSQL service. Relational tables, JSONB, or a combination must be selected from actual access patterns rather than assumed in advance.
+The food-service MVP uses PostgreSQL with a normalized relational schema, applied by Flyway at startup. `analysis_population` is keyed by immutable population ID and version. Related tables store artifact provenance, dimension definitions, records, canonical element usages, dimension states and values, and rejected source records. This preserves `KNOWN` versus `UNKNOWN` without serializing an opaque population blob.
 
-Later persistence may include source descriptors, adapter and mapping versions, imported populations, scenario definitions, portfolios, and optimization results. Those records require explicit links to the exact model, dataset, mapping, and algorithm versions that produced them; they are not part of the initial schema by default.
+The application imports the checked-in fixture on startup and inserts it only when that ID/version is absent. It then reloads the persisted population for analysis. Analyses are calculated on demand; baseline and scenario results are not stored. PostgreSQL 17 round-trip tests verify the reference fixture’s population semantics and workload metrics.
 
 The UI and API are packaged in one container image. The Developer Platform supplies database credentials, HTTP routing, and workload operation. Domain objects do not contain infrastructure configuration.
 
@@ -16,4 +16,4 @@ The UI and API are packaged in one container image. The Developer Platform suppl
 - Persistence verified after workload recreation.
 - Runtime and peak memory recorded for representative fixtures.
 
-Model and dataset IDs, versioning, provenance, concurrent changes, stored analysis or optimization results, schema migration, backup, and recovery procedures remain open. Additional data stores require a defined workload and reproducible comparison.
+Model and dataset IDs, versioning, provenance, migration, concurrent changes, backup and recovery procedures beyond the MVP fixture remain open. Additional data stores require a defined workload and reproducible comparison.

@@ -25,13 +25,14 @@ RUN mvn --batch-mode --no-transfer-progress package -DskipTests
 FROM registry.access.redhat.com/ubi9/openjdk-25-runtime:1.24
 
 ENV LANGUAGE="en_US:en" \
-    JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager" \
+    JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Dvariability.fixture.directory=/deployments/fixture" \
     JAVA_APP_JAR="/deployments/quarkus-run.jar"
 
 COPY --from=api-build --chown=185 /workspace/api/target/quarkus-app/lib/ /deployments/lib/
 COPY --from=api-build --chown=185 /workspace/api/target/quarkus-app/*.jar /deployments/
 COPY --from=api-build --chown=185 /workspace/api/target/quarkus-app/app/ /deployments/app/
 COPY --from=api-build --chown=185 /workspace/api/target/quarkus-app/quarkus/ /deployments/quarkus/
+COPY --chown=185 examples/food-service/mvp-v1/ /deployments/fixture/
 
 EXPOSE 8080
 

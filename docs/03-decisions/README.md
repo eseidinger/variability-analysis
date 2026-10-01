@@ -7,7 +7,7 @@ ADRs separate accepted requirements and documented directions from proposals. Im
 | [001](ADR-001-domain-independent-core.md) | Domain-independent core | Requirement |
 | [002](ADR-002-separation-of-responsibilities.md) | Separate model, calculation, and presentation | Documented direction |
 | [003](ADR-003-verifiable-models.md) | Start with small, verifiable models | Documented direction |
-| [004](ADR-004-postgresql-baseline.md) | PostgreSQL persistence baseline | Documented direction |
+| [004](ADR-004-postgresql-baseline.md) | PostgreSQL persistence baseline | Implemented for food-service MVP |
 | [005](ADR-005-single-container-application.md) | UI and API in one image | Documented direction |
 | [006](ADR-006-analysis-tree-view.md) | Analysis tree as a derived view | Proposed |
 | [007](ADR-007-portable-expression-ast.md) | Portable expression AST | Proposed |

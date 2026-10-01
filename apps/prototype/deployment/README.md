@@ -24,5 +24,6 @@ Deployment configuration:
 - run with the platform-required non-root identity;
 - expose HTTP port 8080;
 - obtain PostgreSQL settings from the platform environment;
+- include the immutable food-service fixture for first-start database seeding;
 - provide application-specific readiness; and
 - operate within the documented CPU and memory limits.

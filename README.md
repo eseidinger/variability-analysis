@@ -6,7 +6,7 @@ A domain-independent framework for modeling, analyzing, configuring, and optimiz
 
 The initial UI/API integration prototype and combined container image have been validated locally. Deployment through the Developer Platform remains to be verified.
 
-The API now contains an in-memory domain-independent analysis core for versioned observed populations and a verified food-service fixture adapter. Food service remains the first UI demonstration. Persistence, configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
+The API now contains an in-memory domain-independent analysis core for versioned observed populations, a verified food-service fixture adapter, and PostgreSQL-backed population storage. Food service remains the first UI demonstration. Configuration assistance, portfolio optimization, and reusable framework components follow after the prototype establishes stable semantics and contracts.
 
 ## Initial prototype
 
@@ -29,7 +29,7 @@ Interactive analysis views, configuration assistance, portfolio optimization, ad
 | Area | Documents |
 |---|---|
 | Product | [Vision](docs/01-product/vision.md), [use cases](docs/01-product/use-cases.md), [requirements](docs/01-product/requirements.md), [roadmap](docs/01-product/roadmap.md) |
-| Architecture | [Overview](docs/02-architecture/overview.md), [domain model](docs/02-architecture/domain-model.md), [analysis view](docs/02-architecture/analysis-view.md), [food-service MVP semantics](docs/02-architecture/food-service-mvp-semantics.md), [persistence and deployment](docs/02-architecture/persistence-and-deployment.md) |
+| Architecture | [Overview](docs/02-architecture/overview.md), [domain model](docs/02-architecture/domain-model.md), [analysis view](docs/02-architecture/analysis-view.md), [food-service MVP semantics](docs/02-architecture/food-service-mvp-semantics.md), [food-service HTTP contract](docs/02-architecture/food-service-http-contract.md), [persistence and deployment](docs/02-architecture/persistence-and-deployment.md) |
 | Decisions | [Architecture decision records](docs/03-decisions/README.md) |
 | Development | [Development plan](docs/04-development/development-plan.md), [MVP implementation plan](docs/04-development/mvp-implementation-plan.md), [quality assurance](docs/04-development/quality-assurance.md), [open decisions](docs/04-development/open-decisions.md) |
 | Operations | [Prototype deployment](docs/05-operations/deployment.md) |
