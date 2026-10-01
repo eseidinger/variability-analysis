@@ -1,0 +1,112 @@
+<main class="dashboard" aria-labelledby="page-title">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Food-service MVP</p>
+      <h1 id="page-title">Recipe variability analysis</h1>
+      <p>Explore the versioned recipe population, its ingredient structure, and the effect of ingredient loss.</p>
+    </div>
+    @if (summary(); as population) {
+      <div class="provenance" aria-label="Population provenance">
+        <span>Population</span><strong>{{ population.population.id }}</strong>
+        <span>Version</span><strong>{{ population.population.version }}</strong>
+      </div>
+    }
+  </section>
+
+  @if (loading()) {
+    <div class="loading" role="status"><mat-spinner diameter="32" /><span>Loading population…</span></div>
+  } @else if (error(); as message) {
+    <div class="error" role="alert">{{ message }}</div>
+  } @else if (summary(); as population) {
+    <section class="metric-grid" aria-label="Population summary">
+      <mat-card><mat-card-content><span>Accepted recipes</span><strong>{{ population.metrics.recordCount }}</strong></mat-card-content></mat-card>
+      <mat-card><mat-card-content><span>Structural variants</span><strong>{{ population.metrics.variantCount }}</strong></mat-card-content></mat-card>
+      <mat-card><mat-card-content><span>Ingredients</span><strong>{{ population.metrics.uniqueElementCount }}</strong></mat-card-content></mat-card>
+      <mat-card><mat-card-content><span>Rejected rows</span><strong>{{ population.rejectedRecords.length }}</strong></mat-card-content></mat-card>
+    </section>
+
+    <section class="workspace" aria-label="Analysis controls and results">
+      <mat-card class="controls-card">
+        <mat-card-header><mat-card-title>Analysis controls</mat-card-title></mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="filters" (ngSubmit)="applyFilters()">
+            <mat-form-field>
+              <mat-label>Cuisines</mat-label>
+              <mat-select formControlName="cuisines" multiple>
+                @for (cuisine of cuisineOptions; track cuisine) { <mat-option [value]="cuisine">{{ cuisine }}</mat-option> }
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Diets</mat-label>
+              <mat-select formControlName="diets" multiple>
+                @for (diet of dietOptions; track diet) { <mat-option [value]="diet">{{ diet }}</mat-option> }
+              </mat-select>
+            </mat-form-field>
+            <div class="button-row">
+              <button mat-flat-button type="submit">Apply filters</button>
+              <button mat-button type="button" (click)="clearFilters()">Clear</button>
+            </div>
+          </form>
+          <mat-divider />
+          <p class="field-label">Grouping order</p>
+          <div cdkDropList class="grouping-list" (cdkDropListDropped)="reorderGrouping($event)" aria-label="Reorder analysis groups">
+            @for (dimension of groupingDimensions(); track dimension) {
+              <div class="grouping-item" cdkDrag><mat-icon aria-hidden="true">drag_indicator</mat-icon>{{ dimensionLabels[dimension] }}</div>
+            }
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="results-card">
+        <mat-card-header><mat-card-title>Selected recipes</mat-card-title><mat-card-subtitle>{{ analysis()?.metrics?.recordCount ?? 0 }} records match the active query</mat-card-subtitle></mat-card-header>
+        <mat-card-content>
+          @if (analysis(); as result) {
+            <div class="record-ids" aria-label="Selected recipe IDs">
+              @for (recordId of result.selectedRecordIds; track recordId) { <mat-chip>{{ recordId }}</mat-chip> }
+            </div>
+            <div class="group-tree">
+              @for (group of result.groups; track group.path) {
+                <details open><summary>{{ groupLabel(group) }} <span>{{ group.metrics.recordCount }} recipes</span></summary>
+                  @for (child of group.children; track child.path) {
+                    <details open><summary>{{ groupLabel(child) }} <span>{{ child.metrics.recordCount }} recipes</span></summary>
+                      @for (leaf of child.children; track leaf.path) { <p class="leaf">{{ groupLabel(leaf) }} · {{ leaf.metrics.recordCount }} recipes · {{ leaf.metrics.variantCount }} variants</p> }
+                    </details>
+                  }
+                </details>
+              }
+            </div>
+          }
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section class="insights" aria-label="Ingredient insights">
+      <mat-card>
+        <mat-card-header><mat-card-title>Ingredient leverage</mat-card-title></mat-card-header>
+        <mat-card-content>
+          <div [formGroup]="filters"><mat-form-field><mat-label>Ingredient</mat-label><mat-select formControlName="leverageElement">
+            @for (element of elements(); track element) { <mat-option [value]="element">{{ element }}</mat-option> }
+          </mat-select></mat-form-field></div>
+          <button mat-stroked-button type="button" (click)="inspectLeverage()">Inspect leverage</button>
+          @if (leverageResult(); as leverage) {
+            <p><strong>{{ leverage.elementId }}</strong> occurs in {{ leverage.recordCount }} selected recipes.</p>
+            @for (dimension of leverage.knownDimensionValues | keyvalue; track dimension.key) { <p class="detail">{{ dimension.key }}: {{ dimension.value?.join(', ') }}</p> }
+          }
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header><mat-card-title>Ingredient unavailability</mat-card-title><mat-card-subtitle>Defaults to garlic, the MVP scenario</mat-card-subtitle></mat-card-header>
+        <mat-card-content>
+          <div [formGroup]="filters"><mat-form-field><mat-label>Unavailable ingredient</mat-label><mat-select formControlName="unavailableElement">
+            @for (element of elements(); track element) { <mat-option [value]="element">{{ element }}</mat-option> }
+          </mat-select></mat-form-field></div>
+          <button mat-flat-button type="button" (click)="inspectImpact()">Run impact</button>
+          @if (impactResult(); as impact) {
+            <div class="impact-grid"><span>Baseline<strong>{{ impact.baseline.metrics.recordCount }}</strong></span><span>Remaining<strong>{{ impact.scenarioResult.metrics.recordCount }}</strong></span><span>Lost<strong>{{ impact.rootDelta.recordCount }}</strong></span></div>
+            <p class="detail">Lost recipes: {{ impact.lostRecordIds.join(', ') || 'none' }}</p>
+          }
+        </mat-card-content>
+      </mat-card>
+    </section>
+  }
+</main>

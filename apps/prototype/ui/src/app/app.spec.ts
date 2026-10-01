@@ -1,45 +1,41 @@
-import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { provideHttpClient } from "@angular/common/http";
+import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+import { TestBed } from "@angular/core/testing";
+import { FoodServiceDashboardComponent } from "./food-service-dashboard";
 
-describe('App', () => {
+const metrics = { recordCount: 12, variantCount: 11, uniqueElementCount: 24, elementRecordCounts: {}, elementRecordFrequencies: {} };
+
+describe("FoodServiceDashboardComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [FoodServiceDashboardComponent],
       providers: [provideHttpClient(), provideHttpClientTesting()],
     }).compileComponents();
   });
 
-  afterEach(() => {
-    TestBed.inject(HttpTestingController).verify();
-  });
+  afterEach(() => TestBed.inject(HttpTestingController).verify());
 
-  it('should display a successful API connection', () => {
-    const fixture = TestBed.createComponent(App);
-    const request = TestBed.inject(HttpTestingController).expectOne('/api/status');
-
-    expect(request.request.method).toBe('GET');
-    request.flush('Variability Engineering API is reachable');
+  it("shows population metrics after loading the summary", () => {
+    const fixture = TestBed.createComponent(FoodServiceDashboardComponent);
+    const http = TestBed.inject(HttpTestingController);
+    http.expectOne("/api/populations/food-service-mvp").flush({
+      population: { id: "food-service-mvp", version: "1.0.0", provenance: {} },
+      dimensions: [], metrics, rejectedRecords: [{ sourceRowId: "13", reason: "missing ingredients" }],
+    });
+    http.expectOne("/api/populations/food-service-mvp/analysis").flush({
+      population: { id: "food-service-mvp", version: "1.0.0", provenance: {} }, query: {}, selectedRecordIds: [], metrics, groups: [],
+    });
     fixture.detectChanges();
 
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Variability Engineering Framework');
-    expect(compiled.querySelector('[role="status"]')?.textContent).toContain(
-      'Variability Engineering API is reachable',
-    );
+    expect((fixture.nativeElement as HTMLElement).textContent).toContain("Accepted recipes");
+    expect((fixture.nativeElement as HTMLElement).textContent).toContain("12");
   });
 
-  it('should display an API connection error', () => {
-    const fixture = TestBed.createComponent(App);
-    const request = TestBed.inject(HttpTestingController).expectOne('/api/status');
-
-    request.flush('Unavailable', { status: 503, statusText: 'Service Unavailable' });
+  it("explains when the population cannot be loaded", () => {
+    const fixture = TestBed.createComponent(FoodServiceDashboardComponent);
+    TestBed.inject(HttpTestingController).expectOne("/api/populations/food-service-mvp").flush("Unavailable", { status: 503, statusText: "Unavailable" });
     fixture.detectChanges();
 
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('[role="status"]')?.textContent).toContain(
-      'The API could not be reached.',
-    );
+    expect((fixture.nativeElement as HTMLElement).querySelector("[role=alert]")?.textContent).toContain("could not be loaded");
   });
 });

@@ -1,24 +1,2 @@
-<main>
-  <section class="status-card" aria-labelledby="page-title">
-    <p class="eyebrow">Integration smoke test</p>
-    <h1 id="page-title">Variability Engineering Framework</h1>
-    <p class="description">
-      This page calls the Quarkus backend through the Angular development proxy.
-    </p>
-
-    <div
-      class="status"
-      [class.status--connected]="connectionState() === 'connected'"
-      [class.status--error]="connectionState() === 'error'"
-      role="status"
-      aria-live="polite"
-    >
-      <span class="status__indicator" aria-hidden="true"></span>
-      <span>{{ statusMessage() }}</span>
-    </div>
-
-    <button type="button" (click)="checkConnection()" [disabled]="connectionState() === 'loading'">
-      Check again
-    </button>
-  </section>
-</main>
+<mat-toolbar color="primary"><span>Variability Engineering Framework</span></mat-toolbar>
+<router-outlet />

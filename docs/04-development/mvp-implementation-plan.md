@@ -43,10 +43,11 @@ Import one versioned recipe population and answer basic questions about recipe c
    - Verify save/load semantics and workload recreation.
    - Implemented through Flyway and `JdbcPopulationRepository`; a PostgreSQL 17 Dev Services test verifies the fixture round trip and reference workload metrics.
 
-5. [ ] Build the food-service UI.
+5. [x] Build the food-service UI.
    - Show population provenance and summary metrics.
    - Add filtering and reorderable cuisine/diet/dish-type grouping.
    - Add ingredient leverage and garlic-unavailability views with visible baseline/scenario deltas.
+   - Implemented as a lazy-loaded Angular Material dashboard backed by the public food-service HTTP contract, with unit coverage for summary loading and API errors.
 
 6. [ ] Add black-box integration and deployment verification.
    - Exercise UI, API, and PostgreSQL together against the fixture.
