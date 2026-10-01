@@ -28,7 +28,7 @@ services:
       QUARKUS_DATASOURCE_USERNAME: variability
       QUARKUS_DATASOURCE_PASSWORD: variability
     ports:
-      - "8080:8080"
+      - "${APP_PORT:-8080}:8080"
     depends_on:
       db:
         condition: service_healthy

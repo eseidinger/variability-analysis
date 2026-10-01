@@ -11,4 +11,10 @@ Initial coverage should include:
 - persistence after workload recreation; and
 - the packaged UI calling the packaged API.
 
-Test tooling will be selected with the implementation stack.
+Run the Compose-backed black-box verification from the repository root:
+
+```shell
+apps/prototype/integration-tests/verify-compose.sh
+```
+
+The script builds the combined image, starts PostgreSQL and the packaged application, verifies the rendered UI and fixture-backed API queries, restarts the application to verify persistence, reports the application cgroup peak-memory value when available, and tears down its temporary database volume. It requires Docker Compose and curl. By default it uses host port `18080`; set `APP_PORT` to choose another available port.

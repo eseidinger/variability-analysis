@@ -49,9 +49,10 @@ Import one versioned recipe population and answer basic questions about recipe c
    - Add ingredient leverage and garlic-unavailability views with visible baseline/scenario deltas.
    - Implemented as a lazy-loaded Angular Material dashboard backed by the public food-service HTTP contract, with unit coverage for summary loading and API errors.
 
-6. [ ] Add black-box integration and deployment verification.
+6. [x] Add black-box integration and deployment verification.
    - Exercise UI, API, and PostgreSQL together against the fixture.
    - Build the combined image, deploy it, recreate the workload, and record revision, runtime, peak memory, and limitations.
+   - Implemented by the Compose-backed [black-box verifier](../../apps/prototype/integration-tests/verify-compose.sh) and its [local deployment record](mvp-deployment-verification.md).
 
 ## Explicitly deferred
 
