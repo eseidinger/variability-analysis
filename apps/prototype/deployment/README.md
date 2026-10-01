@@ -9,7 +9,22 @@ docker build --file apps/prototype/deployment/Dockerfile --tag variability-engin
 docker run --rm --publish 8080:8080 variability-engineering-framework
 ```
 
-Open <http://localhost:8080>. The UI calls `/api/status` on the same origin; the Angular development proxy is not involved in the container.
+Open <http://localhost:8080>. The UI calls the food-service API on the same origin; the Angular development proxy is not involved in the container.
+
+For local development, use the repository-root [Compose environment](../../../compose.yaml):
+
+```shell
+# Start only PostgreSQL for API and UI hot-reload development.
+docker compose up -d db
+
+# Start PostgreSQL and build/run the packaged UI + API at http://localhost:8080.
+docker compose --profile app up --build
+
+# Remove the development database volume when a clean seed is needed.
+docker compose down -v
+```
+
+The `db` service exposes PostgreSQL on `localhost:5432` with development-only credentials (`variability`/`variability`). The `app` profile waits for its health check and receives its datasource settings through Compose.
 
 The multi-stage build:
 
